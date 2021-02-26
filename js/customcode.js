@@ -7,28 +7,28 @@
 jQuery(document).ready(function(){
 
 	"use strict";
-	
+
 	function waxon_tm_about_animations(){
-		
+
 		var image = document.getElementsByClassName('thumbnail');
 		new simpleParallax(image, {
 			delay:5,
 			overflow: true,
 			orientation:'down'
 		});
-		
+
 		var image2 = document.getElementsByClassName('thumbnail-2');
 		new simpleParallax(image2, {
 			delay:5,
 			overflow: true,
 			orientation:'right'
 		});
-		
+
 		var image3 = document.getElementsByClassName('thumbnail-3');
 		new simpleParallax(image3, {
 			delay:5
 		});
-		
+
 		var image4 = document.getElementsByClassName('thumbnail-4');
 		new simpleParallax(image4, {
 			delay:5,
@@ -36,19 +36,19 @@ jQuery(document).ready(function(){
 		});
 	}
 	waxon_tm_about_animations();
-	
+
 	// -----------------------------------------------------
 	// --------------------    WOW JS    -------------------
 	// -----------------------------------------------------
 
  	new WOW().init();
-	
+
 	// -----------------------------------------------------
 	// -----------------   SWIPER SLIDER    ----------------
 	// -----------------------------------------------------
-	
+
 	function waxon_tm_hero_slider(){
-		
+
 		var section		= $('.fn_cs_personal_slider');
 		section.each(function(){
 			var element				= $(this);
@@ -111,26 +111,26 @@ jQuery(document).ready(function(){
 
 	}
 	waxon_tm_hero_slider();
-	
+
 	// -------------------------------------------------
 	// -------------  SLIDER KENBURN  ------------------
 	// -------------------------------------------------
 
 	function waxon_tm_kenburn_slider(){
-		
+
 		var mySlider	= jQuery('.vegas-slide-inner');
-		
+
 		if(mySlider.length){
 			var dataImages	= jQuery('.vegas-slide-inner').data('images');
 			var nameArray	= dataImages.split(',');
-			var html	= []; 
+			var html	= [];
 
 		    for(var i=0;i<nameArray.length;i++){
 			   html.push({src:nameArray[i]});
-		    }	
+		    }
 		   jQuery(function() {
 			  jQuery('.waxon_tm_hero .overlay_slider').vegas({
-			  timer:false,	
+			  timer:false,
 			  animation: [ 'kenburnsUp', 'kenburnsLeft', 'kenburnsRight'],
 			  delay:7000,
 			  slides: html
@@ -138,16 +138,16 @@ jQuery(document).ready(function(){
 		   });
 
 		}
-	   
+
 	}
 	waxon_tm_kenburn_slider();
-	
+
 	// -------------------------------------------------
 	// -------------------  ANCHOR ---------------------
 	// -------------------------------------------------
 
 	jQuery('.anchor_nav').onePageNav();
-	
+
 	// -------------------------------------------------
 	// -------------------  FILTER OPENER --------------
 	// -------------------------------------------------
@@ -173,7 +173,7 @@ jQuery(document).ready(function(){
 		});
 	}
 	waxon_tm_filter_opener();
-	
+
 	// -----------------------------------------------------
 	// -----------   TESTIMONIAL HOVER    ------------------
 	// -----------------------------------------------------
@@ -192,7 +192,7 @@ jQuery(document).ready(function(){
 		});
 	}
 	waxon_tm_testimonials_effect();
-	
+
 	// -----------------------------------------------------
 	// --------------------    JARALLAX    -----------------
 	// -----------------------------------------------------
@@ -216,19 +216,19 @@ jQuery(document).ready(function(){
 		});
 	}
 	waxon_tm_jarallax();
-	
+
 	// -----------------------------------------------------
 	// ---------------   MOBILE MENU    --------------------
 	// -----------------------------------------------------
 
 	function edrea_tm_hamburger(){
-		
+
 	var hamburger 		= jQuery('.hamburger');
 	var mobileMenu		= jQuery('.waxon_tm_mobile_menu .dropdown');
-	
+
 	hamburger.on('click',function(){
 		var element 	= jQuery(this);
-		
+
 		if(element.hasClass('is-active')){
 			element.removeClass('is-active');
 			mobileMenu.slideUp();
@@ -240,7 +240,7 @@ jQuery(document).ready(function(){
 	});
 }
 	edrea_tm_hamburger();
-	
+
 	// -----------------------------------------------------
 	// --------------   TOPBAR BACKGROUND    ---------------
 	// -----------------------------------------------------
@@ -259,7 +259,7 @@ jQuery(document).ready(function(){
 		});
 	}
 	waxon_tm_nav_bg();
-	
+
 	// -----------------------------------------------------
 	// ------------------   CURSOR    ----------------------
 	// -----------------------------------------------------
@@ -283,9 +283,9 @@ jQuery(document).ready(function(){
 			}), e.style.visibility = "visible", t.style.visibility = "visible"
 		}
 		}
-	};
+	}
 	waxon_tm_cursor();
-	
+
 	// -----------------------------------------------------
 	// ----------------    OWL CAROUSEL    -----------------
 	// -----------------------------------------------------
@@ -324,7 +324,7 @@ jQuery(document).ready(function(){
 		waxon_tm_imgtosvg();
 	}
 	waxon_tm_partners();
-	
+
 	// -----------------------------------------------------
 	// ---------------    IMAGE TO SVG    ------------------
 	// -----------------------------------------------------
@@ -357,7 +357,7 @@ jQuery(document).ready(function(){
 		});
 	}
 	waxon_tm_imgtosvg();
-	
+
 	// -----------------------------------------------------
 	// --------------------   POPUP    ---------------------
 	// -----------------------------------------------------
@@ -409,7 +409,7 @@ jQuery(document).ready(function(){
 	// -----------------    PORTFOLIO    ---------------
 	// -------------------------------------------------
 
-	// filterable 
+	// filterable
 
 	function waxon_tm_portfolio(){
 
@@ -420,10 +420,10 @@ jQuery(document).ready(function(){
 			var filter		 = jQuery('.waxon_tm_portoflio .portfolio_filter ul');
 
 			if(filter.length){
-				// Isotope Filter 
+				// Isotope Filter
 				filter.find('a').on('click', function(){
 					var selector = jQuery(this).attr('data-filter');
-					list.isotope({ 
+					list.isotope({
 						filter				: selector,
 						animationOptions	: {
 							duration			: 750,
@@ -432,19 +432,19 @@ jQuery(document).ready(function(){
 						}
 					});
 					return false;
-				});	
+				});
 
 				// Change active element class
 				filter.find('a').on('click', function() {
 					filter.find('a').removeClass('current');
 					jQuery(this).addClass('current');
 					return false;
-				});	
+				});
 			}
 		}
 	}
 	waxon_tm_portfolio();
-	
+
 	function waxon_tm_myload(){
 		setTimeout(function(){
 			jQuery('.waxon_tm_preloader').addClass('loaded');
@@ -455,7 +455,7 @@ jQuery(document).ready(function(){
 		setTimeout(function(){
 			jQuery('.waxon_tm_topbar').addClass('opened');
 		}, 3000);
-	
+
 		setTimeout(function(){
 			waxon_tm_isotope();
 		}, 5000);
@@ -496,7 +496,7 @@ jQuery(document).ready(function(){
 			var success     = jQuery(".contact_form .returnmessage").data('success');
 
 			jQuery(".contact_form .returnmessage").empty(); //To empty previous error/success message.
-			//checking for blank fields	
+			//checking for blank fields
 			if(name===''||email===''||message===''){
 
 				jQuery('div.empty_notice').slideDown(500).delay(2000).slideUp(500);
@@ -509,7 +509,7 @@ jQuery(document).ready(function(){
 
 
 					if(jQuery(".contact_form .returnmessage span.contact_error").length){
-						jQuery(".contact_form .returnmessage").slideDown(500).delay(2000).slideUp(500);		
+						jQuery(".contact_form .returnmessage").slideDown(500).delay(2000).slideUp(500);
 					}else{
 						jQuery(".contact_form .returnmessage").append("<span class='contact_success'>"+ success +"</span>");
 						jQuery(".contact_form .returnmessage").slideDown(500).delay(4000).slideUp(500);
@@ -521,11 +521,11 @@ jQuery(document).ready(function(){
 
 				});
 			}
-			return false; 
+			return false;
 		});
 	}
 	waxon_tm_contact_form();
-	
+
 	// -------------------------------------------------
 	// -------------  GLITCH  --------------------------
 	// -------------------------------------------------
@@ -541,22 +541,22 @@ jQuery(document).ready(function(){
 		glitch2TimeMin: 10,
 		glitch2TimeMax: 100
 	});
-	
+
 	// -------------------------------------------------
 	// -------------  RESIZE FUNCTION  -----------------
 	// -------------------------------------------------
-	
+
 	jQuery(window).on('resize',function(){
 		waxon_tm_isotope();
 		waxon_tm_portfolio();
 	});
-	
+
 	// -------------------------------------------------
 	// -------------  LOAD FUNCTION  -------------------
 	// -------------------------------------------------
-	
+
 	jQuery(window).load('body', function(){
 		waxon_tm_myload();
 	});
-	
+
 });
